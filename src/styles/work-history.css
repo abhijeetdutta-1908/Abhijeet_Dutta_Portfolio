@@ -124,20 +124,17 @@
 	text-decoration: underline;
 }
 
-/* Tablet + mobile */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 768px) {
 	.work-history-section {
-		min-height: unset;
-		padding: 2.5rem clamp(1rem, 4vw, 2rem) 3rem;
+		padding: 2rem 2rem;
 		flex-direction: column-reverse;
 		align-items: center;
-		gap: 1.25rem;
+		gap: 1rem;
 		text-align: center;
 	}
 
 	.work-history-section > div {
 		width: 100% !important;
-		max-width: 42rem;
 		padding: 0 !important;
 	}
 
@@ -146,11 +143,11 @@
 	}
 
 	.work-history-card {
-		padding: 1.35rem clamp(1rem, 3vw, 1.5rem);
+		padding: 1.5rem 1rem;
 	}
 
 	.work-history-card:hover {
-		transform: none;
+		transform: translateY(-5px);
 	}
 
 	.exp-header {
@@ -164,20 +161,19 @@
 	}
 
 	.exp-title-group h3 {
-		font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+		font-size: 1.4rem;
 		line-height: 1.2;
 	}
 
 	.exp-title-group .company {
-		font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+		font-size: 1rem;
 	}
 
 	.exp-details li {
 		text-align: left;
-		font-size: clamp(0.98rem, 2.6vw, 1.08rem);
-		line-height: 1.6rem;
-		color: rgba(255, 255, 255, 0.88);
-		padding-left: 1.35rem;
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		color: rgba(255, 255, 255, 0.85);
 	}
 
 	.exp-link {

@@ -7,10 +7,12 @@ import { Works } from './sections/works.section';
 import { WorkHistory } from './sections/work-history.section';
 import { Resume } from './sections/resume.section';
 import { Contact } from './sections/contact.section';
+import { Footer } from './components/footer.component';
 import './styles/about-me.css';
 import './styles/work-history.css';
 import './styles/resume.css';
 import './styles/contact.css';
+import './styles/footer.css';
 import './styles/floating-button.css';
 import './styles/glow-box.css';
 import './styles/info-section.css';
@@ -27,11 +29,12 @@ function App() {
 			<MouseTrail />
 			<InfoSection />
 			<AboutMe />
+			<WorkHistory />
 			<TechStack />
 			<Works />
-			<WorkHistory />
 			<Resume />
 			<Contact />
+			<Footer />
 		</>
 	);
 }

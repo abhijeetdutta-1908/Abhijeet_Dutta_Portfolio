@@ -30,7 +30,6 @@ const projects = [
 			{ icon: <SiGithubactions color='#2088FF' />, name: 'GitHub Actions', color: 'rgba(32, 136, 255, 0.6)' },
 		],
 		github: 'https://github.com/abhijeetdutta-1908',
-		live: '#',
 	},
 	{
 		title: 'AWS CI/CD Pipeline with Terraform & CodePipeline',
@@ -42,7 +41,6 @@ const projects = [
 			{ icon: <SiGithubactions color='#2088FF' />, name: 'GitHub Actions', color: 'rgba(32, 136, 255, 0.6)' },
 		],
 		github: 'https://github.com/abhijeetdutta-1908',
-		live: '#',
 	},
 ];
 
@@ -71,12 +69,14 @@ export const Works = () => {
 								icon={<FaGithub color='rgba(255, 255, 255, 0.8)' />}
 								aria-label='GitHub'
 							/>
-							<GlowLink
-								href={project.live}
-								color='rgba(31, 195, 255, 0.6)'
-								icon={<FaExternalLinkAlt color='rgba(31, 195, 255, 0.8)' />}
-								aria-label='Live Demo'
-							/>
+							{project.live && (
+								<GlowLink
+									href={project.live}
+									color='rgba(31, 195, 255, 0.6)'
+									icon={<FaExternalLinkAlt color='rgba(31, 195, 255, 0.8)' />}
+									aria-label='Live Demo'
+								/>
+							)}
 						</div>
 					</div>
 				))}

@@ -1,0 +1,18 @@
+.footer-container {
+	width: 100%;
+	text-align: center;
+	padding: 1.5rem 0;
+	margin-top: 2rem;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.85rem;
+	color: rgba(255, 255, 255, 0.4);
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+	letter-spacing: 0.05rem;
+}
+
+@media screen and (max-width: 768px) {
+	.footer-container {
+		font-size: 0.75rem;
+		padding: 1rem 0;
+	}
+}
