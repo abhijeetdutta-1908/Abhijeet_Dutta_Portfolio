@@ -59,7 +59,7 @@ export const InfoSection = () => {
 					aria-label='github'
 				/>
 				<GlowLink
-					href='www.linkedin.com/in/abhijeet-dutta-19082005ad'
+					href='https://www.linkedin.com/in/abhijeet-dutta-19082005ad/'
 					color='rgb(0, 160, 220, 0.6)'
 					icon={<FaLinkedinIn color='rgb(0, 160, 220)' />}
 					aria-label='linkedin'

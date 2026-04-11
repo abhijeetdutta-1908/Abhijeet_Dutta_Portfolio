@@ -1,0 +1,128 @@
+.spiral-intro {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	background: #000;
+	overflow: hidden;
+	transition:
+		opacity 650ms ease,
+		visibility 650ms ease;
+}
+
+.spiral-intro--leaving {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.spiral-intro__animation,
+.spiral-animation,
+.spiral-animation__canvas {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.spiral-animation__canvas {
+	display: block;
+}
+
+.spiral-intro__content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	width: min(90vw, 34rem);
+	text-align: center;
+	opacity: 0;
+	transform: translate(-50%, calc(-50% + 1rem));
+	transition:
+		opacity 1200ms ease,
+		transform 1200ms ease;
+}
+
+.spiral-intro__content--visible {
+	opacity: 1;
+	transform: translate(-50%, -50%);
+}
+
+.spiral-intro__eyebrow {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.28rem;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.spiral-intro__title {
+	font-family: 'Fugaz One', sans-serif;
+	font-size: clamp(2.35rem, 8vw, 5.5rem);
+	line-height: 0.95;
+	letter-spacing: 0.08rem;
+	text-transform: uppercase;
+	color: #1fc3ff;
+	text-shadow: 0 0 28px rgba(31, 195, 255, 0.45);
+}
+
+.spiral-intro__subtitle {
+	margin-top: -0.35rem;
+	font-family: 'Open Sans', sans-serif;
+	font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+	font-weight: 600;
+	letter-spacing: 0.14rem;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.76);
+}
+
+.spiral-intro__button {
+	margin-top: 0.75rem;
+	padding: 0.9rem 1.5rem;
+	min-width: 10rem;
+	border: 1px solid rgba(31, 195, 255, 0.55);
+	border-radius: 12px;
+	background:
+		linear-gradient(to top right, rgba(255, 255, 255, 0), rgba(31, 195, 255, 0.22)),
+		rgba(0, 0, 0, 0.35);
+	color: #fff;
+	font-family: 'Fugaz One', sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.22rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		transform 250ms ease,
+		box-shadow 250ms ease,
+		background-color 250ms ease;
+}
+
+.spiral-intro__button:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 0 28px rgba(31, 195, 255, 0.34);
+	background-color: rgba(31, 195, 255, 0.1);
+}
+
+@media screen and (max-width: 700px) {
+	.spiral-intro__content {
+		gap: 0.75rem;
+	}
+
+	.spiral-intro__title {
+		font-size: clamp(2.15rem, 12vw, 3.75rem);
+	}
+
+	.spiral-intro__button {
+		min-height: 48px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.spiral-intro,
+	.spiral-intro__content,
+	.spiral-intro__button {
+		transition: none;
+	}
+}
