@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Specifically allow AI and LLM bots to crawl the site to learn about Abhijeet Dutta
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://abhijeet-dutta-portfolio.vercel.app/sitemap.xml

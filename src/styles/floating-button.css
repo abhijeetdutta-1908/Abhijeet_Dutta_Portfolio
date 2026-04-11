@@ -124,3 +124,25 @@
 .floating-btn.fifth > span {
 	background-color: var(--accentHi);
 }
+
+/* Tablet + mobile: cluster nav buttons; desktop keeps absolute orbits (min-width: 1024px) */
+@media screen and (max-width: 1023px) {
+	.floating-btn {
+		position: relative;
+		top: auto !important;
+		left: auto !important;
+		right: auto !important;
+		bottom: auto !important;
+		flex: 1 1 calc(50% - 0.35rem);
+		min-width: 0;
+		max-width: 168px;
+		margin-inline: auto;
+	}
+
+	.floating-btn div {
+		width: 100%;
+		max-width: 168px;
+		margin-inline: auto;
+		animation: none;
+	}
+}

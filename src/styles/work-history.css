@@ -124,43 +124,65 @@
 	text-decoration: underline;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-	.experience-section {
-		padding: 2rem 2rem;
+/* Tablet + mobile */
+@media screen and (max-width: 1023px) {
+	.work-history-section {
+		min-height: unset;
+		padding: 2.5rem clamp(1rem, 4vw, 2rem) 3rem;
 		flex-direction: column-reverse;
 		align-items: center;
-		gap: 1rem;
+		gap: 1.25rem;
 		text-align: center;
 	}
 
-	.experience-section > div {
+	.work-history-section > div {
 		width: 100% !important;
+		max-width: 42rem;
 		padding: 0 !important;
 	}
 
-	.experience-section .title {
+	.work-history-section .title {
 		margin-top: 2rem;
 	}
 
-	.experience-card {
-		padding: 1.5rem 1rem;
+	.work-history-card {
+		padding: 1.35rem clamp(1rem, 3vw, 1.5rem);
 	}
 
-	.experience-card:hover {
-		transform: translateY(-5px);
+	.work-history-card:hover {
+		transform: none;
 	}
 
 	.exp-header {
 		flex-direction: column;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.65rem;
+	}
+
+	.period {
+		align-self: center;
+	}
+
+	.exp-title-group h3 {
+		font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+		line-height: 1.2;
+	}
+
+	.exp-title-group .company {
+		font-size: clamp(0.95rem, 2.5vw, 1.05rem);
 	}
 
 	.exp-details li {
 		text-align: left;
-		font-size: 1.2rem;
-		line-height: 1.8rem;
-		color: rgba(255, 255, 255, 0.85);
+		font-size: clamp(0.98rem, 2.6vw, 1.08rem);
+		line-height: 1.6rem;
+		color: rgba(255, 255, 255, 0.88);
+		padding-left: 1.35rem;
+	}
+
+	.exp-link {
+		justify-content: center;
+		margin-top: 1.25rem;
+		min-height: 44px;
 	}
 }

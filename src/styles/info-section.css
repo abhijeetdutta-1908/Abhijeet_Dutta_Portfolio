@@ -1,11 +1,21 @@
 .hero-section {
 	min-height: 100vh;
+	min-height: 100dvh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	font-size: 2.5rem;
 	position: relative;
+}
+
+.hero-nav-buttons {
+	display: contents;
+}
+
+.hero-eyebrow,
+.hero-tagline {
+	font-size: inherit;
 }
 
 .hero-section .name {
@@ -89,32 +99,75 @@
 	transform: translateY(4px);
 }
 
-/* 🔹 Responsive tweak */
+/* Tablet + mobile (desktop unchanged at min-width: 1024px) */
+@media screen and (max-width: 1023px) {
+	.hero-section {
+		text-align: center;
+		justify-content: center;
+		padding-inline: clamp(0.85rem, 4vw, 1.25rem);
+		padding-bottom: 6.5rem;
+		padding-top: clamp(1rem, 4vh, 2.5rem);
+		font-size: clamp(1.35rem, 3.2vw, 2rem);
+		gap: 0.35rem;
+	}
+
+	.hero-section .name {
+		font-size: clamp(2.75rem, 12vw, 4.5rem);
+		line-height: 0.95;
+	}
+
+	.hero-eyebrow,
+	.hero-tagline {
+		max-width: min(100%, 26rem);
+		margin-inline: auto;
+	}
+
+	.hero-tagline {
+		line-height: 1.35;
+	}
+
+	.hero-nav-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: stretch;
+		gap: 0.65rem;
+		width: 100%;
+		max-width: 22.5rem;
+		margin-top: clamp(1rem, 3vh, 1.75rem);
+	}
+
+	.bottom-bar {
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: max(16px, env(safe-area-inset-bottom, 0px));
+		padding-bottom: env(safe-area-inset-bottom, 0px);
+		gap: 0.65rem;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.github-ribbon div {
 		font-size: 0.75rem;
 	}
 }
 
-@media screen and (max-width: 700px) {
-	.hero-section {
-		font-size: 2rem;
-	}
+@media screen and (max-width: 480px) {
 	.hero-section .name {
-		font-size: 4rem;
+		font-size: clamp(2.25rem, 11vw, 3.25rem);
 	}
 
 	.bottom-bar {
-		gap: 5px;
+		gap: 0.45rem;
 	}
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
 	.hero-section .name {
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 
 	.bottom-bar {
-		gap: 2px;
+		gap: 0.35rem;
 	}
 }

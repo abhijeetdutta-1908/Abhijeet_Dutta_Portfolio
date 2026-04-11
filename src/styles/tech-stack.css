@@ -37,16 +37,19 @@
 	font-family: 'Fugaz One', sans-serif;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1023px) {
 	.tech-stack {
-		padding: 1rem 2rem;
+		min-height: unset;
+		padding: 2.5rem clamp(1rem, 4vw, 2rem) 3rem;
 		flex-direction: column-reverse;
-		gap: 1rem;
+		align-items: center;
+		gap: 1.25rem;
 	}
 
 	.tech-stack > div {
 		width: 100%;
-		padding: 0.5rem;
+		max-width: 40rem;
+		padding: 0.5rem 0;
 	}
 
 	.tech-stack .title {
@@ -55,11 +58,16 @@
 	}
 
 	.tech-stack p {
-		font-size: 1.1rem;
-		line-height: 1.5rem;
+		font-size: clamp(1rem, 2.6vw, 1.15rem);
+		line-height: 1.55rem;
 	}
 
 	.tech-row {
-		gap: 0.5rem;
+		gap: 0.65rem;
+		justify-content: center;
+	}
+
+	.tech-grid {
+		width: 100%;
 	}
 }

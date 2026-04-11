@@ -8,41 +8,47 @@ import { TextHover } from '../components/text-hover.component';
 export const InfoSection = () => {
 	return (
 		<div className='hero-section'>
-			<FloatingButton
-				label='About Me'
-				className='first'
-				href='/#about-me'
-			/>
-			<p>Hi, I am</p>
-			<TextHover
-				text='ABHIJEET'
-				className='name'
-			/>
-			<TextHover
-				text='DUTTA'
-				className='name'
-			/>
-			<p>Full Stack Developer | DevOps Engineer</p>
-			<FloatingButton
-				label='Tech'
-				className='sec'
-				href='/#tech-stack'
-			/>
-			<FloatingButton
-				label='Works'
-				className='third'
-				href='/#works'
-			/>
-			<FloatingButton
-				label='CV'
-				className='fourth'
-				href='/#resume'
-			/>
-			<FloatingButton
-				label='Contact'
-				className='fifth'
-				href='/#contact'
-			/>
+			<p className='hero-eyebrow'>Hi, I am</p>
+			<h1 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 0 }}>
+				<TextHover
+					text='ABHIJEET'
+					className='name'
+					as='span'
+				/>
+				<TextHover
+					text='DUTTA'
+					className='name'
+					as='span'
+				/>
+			</h1>
+			<p className='hero-tagline'>Full Stack Developer | DevOps Engineer</p>
+			<div className='hero-nav-buttons'>
+				<FloatingButton
+					label='About Me'
+					className='first'
+					href='/#about-me'
+				/>
+				<FloatingButton
+					label='Tech'
+					className='sec'
+					href='/#tech-stack'
+				/>
+				<FloatingButton
+					label='Works'
+					className='third'
+					href='/#works'
+				/>
+				<FloatingButton
+					label='CV'
+					className='fourth'
+					href='/#resume'
+				/>
+				<FloatingButton
+					label='Contact'
+					className='fifth'
+					href='/#contact'
+				/>
+			</div>
 
 			<div className='blur'></div>
 			<div className='bottom-bar'>

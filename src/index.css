@@ -26,10 +26,15 @@ html {
 }
 
 * {
-	cursor: none !important;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	* {
+		cursor: none !important;
+	}
 }
 
 body {
@@ -38,9 +43,14 @@ body {
 	font-style: normal;
 	background-color: var(--background);
 	color: var(--text);
-	cursor: none;
 	scroll-behavior: smooth;
 	overflow-x: clip;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	body {
+		cursor: none;
+	}
 }
 
 .container {
@@ -117,14 +127,24 @@ hr:before {
 	margin-bottom: 0.9rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1023px) {
 	.scroll-bar {
 		display: none;
 	}
 }
 
-@media screen and (max-width: 450px) {
-	p {
-		font-size: 1.5rem;
+/* Readable hero copy on small phones only — avoids blowing up all body text */
+@media screen and (max-width: 480px) {
+	.hero-section .hero-eyebrow,
+	.hero-section .hero-tagline {
+		font-size: clamp(0.95rem, 4.2vw, 1.35rem);
+		line-height: 1.35;
+		padding-inline: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.container {
+		padding-inline: clamp(1rem, 4vw, 1.75rem);
 	}
 }

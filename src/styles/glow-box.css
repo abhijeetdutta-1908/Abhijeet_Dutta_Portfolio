@@ -102,10 +102,12 @@
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1023px) {
 	.glow-box {
-		height: 3.5rem;
-		width: 3.5rem;
+		height: 3.65rem;
+		width: 3.65rem;
+		min-height: 44px;
+		min-width: 44px;
 	}
 
 	.glow-box-title {
