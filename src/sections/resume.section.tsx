@@ -13,11 +13,11 @@ export const Resume = () => {
 						Explore my complete professional background, technical expertise, and academic achievements in a structured format.
 					</p>
 					<div className='resume-actions'>
-						<a href='../public/Abhijeet_Dutta_Resume.pdf' target='_blank' rel='noopener noreferrer' className='resume-btn view'>
+						<a href='/Abhijeet_Dutta_Resume.pdf' target='_blank' rel='noopener noreferrer' className='resume-btn view'>
 							<FaEye size={20} />
 							<span>View Online</span>
 						</a>
-						<a href='../public/Abhijeet_Dutta_Resume.pdf' download='Abhijeet_Dutta_Resume.pdf' className='resume-btn download'>
+						<a href='/Abhijeet_Dutta_Resume.pdf' download='Abhijeet_Dutta_Resume.pdf' className='resume-btn download'>
 							<FaDownload size={20} />
 							<span>Download PDF</span>
 						</a>
