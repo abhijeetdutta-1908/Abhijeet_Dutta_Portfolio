@@ -16,7 +16,7 @@ const projects = [
 			{ icon: <SiMongodb color='#47A248' />, name: 'MongoDB', color: 'rgba(71, 162, 72, 0.6)' },
 		],
 		github: 'https://github.com/abhijeetdutta-1908',
-		live: '#',
+		live: 'https://campus-eats-sooty-three.vercel.app',
 	},
 	{
 		title: 'DevSecOps Pipeline for Containerized Applications',
