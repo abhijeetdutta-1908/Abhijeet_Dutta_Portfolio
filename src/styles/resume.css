@@ -1,0 +1,98 @@
+.resume-section {
+	min-height: 100vh;
+	display: flex;
+	padding: 2rem 4rem;
+	align-items: center;
+}
+
+.resume-section > div:first-child {
+	width: 50%;
+	padding: 1rem;
+}
+
+.resume-section > div:last-child {
+	width: 50%;
+	padding: 1rem;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-card {
+	padding: 3rem;
+	background: linear-gradient(to top right, #ffffff00, #1fc3ff11);
+	border-radius: 20px;
+    border: 1px solid rgba(31, 195, 255, 0.1);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.resume-description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2.5rem;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.resume-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.resume-btn.view {
+    background: transparent;
+    color: rgb(31, 195, 255);
+    border: 1px solid rgba(31, 195, 255, 0.5);
+}
+
+.resume-btn.download {
+    background: rgb(31, 195, 255);
+    color: white;
+    border: 1px solid rgb(31, 195, 255);
+}
+
+.resume-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 0 20px rgba(31, 195, 255, 0.4);
+}
+
+.resume-btn.view:hover {
+    background: rgba(31, 195, 255, 0.1);
+}
+
+@media screen and (max-width: 900px) {
+    .resume-section {
+        flex-direction: column;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+
+    .resume-section > div {
+        width: 100% !important;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+    }
+}

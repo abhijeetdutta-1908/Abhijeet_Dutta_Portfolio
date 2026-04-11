@@ -1,37 +1,37 @@
-.experience-section {
+.work-history-section {
 	min-height: 100vh;
 	display: flex;
 	padding: 2rem 4rem;
 }
 
-.experience-section > div:first-child {
+.work-history-section > div:first-child {
 	width: 50%;
 	padding: 1rem;
 }
 
-.experience-section > div:last-child {
+.work-history-section > div:last-child {
 	width: 50%;
 	padding: 1rem;
 }
 
-.experience-section .title {
+.work-history-section .title {
 	margin-top: 6rem;
 }
 
-.experience-section p,
-.experience-section li {
+.work-history-section p,
+.work-history-section li {
 	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	line-height: 1.5rem;
 }
 
-.experience-grid {
+.work-history-grid {
 	display: flex;
 	flex-direction: column;
 	gap: 2.5rem;
 }
 
-.experience-card {
+.work-history-card {
 	padding: 1.5rem 3rem;
 	background: linear-gradient(to top right, #ffffff00, #1fc3ff21);
 	border-radius: 12px;
@@ -41,7 +41,7 @@
 	text-align: center;
 }
 
-.experience-card:hover {
+.work-history-card:hover {
 	transform: translateX(-8px);
 }
 

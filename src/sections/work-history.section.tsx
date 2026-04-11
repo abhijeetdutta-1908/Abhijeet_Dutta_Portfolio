@@ -1,7 +1,7 @@
 import { SectionTitle } from '../components/section-title.component';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
-const experiences = [
+const workHistories = [
 	{
 		title: 'Web Developer Intern',
 		company: 'Fularani Foundation',
@@ -36,12 +36,12 @@ const experiences = [
 	},
 ];
 
-export const Experience = () => {
+export const WorkHistory = () => {
 	return (
-		<section className='experience-section container' id='experience'>
-			<div className='experience-grid'>
-				{experiences.map((exp, index) => (
-					<div className='experience-card' key={index}>
+		<section className='work-history-section container' id='work-history'>
+			<div className='work-history-grid'>
+				{workHistories.map((exp, index) => (
+					<div className='work-history-card' key={index}>
 						<div className='exp-header'>
 							<div className='exp-title-group'>
 								<h3>{exp.title}</h3>

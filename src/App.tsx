@@ -4,9 +4,13 @@ import { AboutMe } from './sections/about-me.section';
 import { InfoSection } from './sections/info.section';
 import { TechStack } from './sections/tech-stack.section';
 import { Works } from './sections/works.section';
-import { Experience } from './sections/experience.section';
+import { WorkHistory } from './sections/work-history.section';
+import { Resume } from './sections/resume.section';
+import { Contact } from './sections/contact.section';
 import './styles/about-me.css';
-import './styles/experience.css';
+import './styles/work-history.css';
+import './styles/resume.css';
+import './styles/contact.css';
 import './styles/floating-button.css';
 import './styles/glow-box.css';
 import './styles/info-section.css';
@@ -25,7 +29,9 @@ function App() {
 			<AboutMe />
 			<TechStack />
 			<Works />
-			<Experience />
+			<WorkHistory />
+			<Resume />
+			<Contact />
 		</>
 	);
 }

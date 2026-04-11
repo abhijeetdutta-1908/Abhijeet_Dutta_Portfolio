@@ -18,7 +18,11 @@ export const InfoSection = () => {
 				text='ABHIJEET'
 				className='name'
 			/>
-			<p>Full Stack Developer</p>
+			<TextHover
+				text='DUTTA'
+				className='name'
+			/>
+			<p>Full Stack Developer | DevOps Engineer</p>
 			<FloatingButton
 				label='Tech'
 				className='sec'
@@ -28,6 +32,16 @@ export const InfoSection = () => {
 				label='Works'
 				className='third'
 				href='/#works'
+			/>
+			<FloatingButton
+				label='CV'
+				className='fourth'
+				href='/#resume'
+			/>
+			<FloatingButton
+				label='Contact'
+				className='fifth'
+				href='/#contact'
 			/>
 
 			<div className='blur'></div>
