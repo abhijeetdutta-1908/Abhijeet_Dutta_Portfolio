@@ -1,0 +1,134 @@
+.works-section {
+	min-height: 100vh;
+	display: flex;
+	padding: 2rem 4rem;
+}
+
+.works-section > div:first-child {
+	width: 50%;
+	padding: 1rem;
+}
+
+.works-section .title {
+	margin-top: 6rem;
+}
+
+.works-section > div:last-child {
+	width: 50%;
+	padding: 1rem;
+}
+
+.works-section p {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	line-height: 1.5rem;
+}
+
+.projects-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.project-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 3rem;
+	background: linear-gradient(to top right, #ffffff00, #1fc3ff21);
+	border-radius: 12px;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.project-card:hover {
+	transform: translateX(8px);
+}
+
+.project-info {
+	flex: 1;
+	padding-right: 2rem;
+}
+
+.project-info h3 {
+	font-size: 1.7rem;
+	margin-bottom: 0.8rem;
+	color: #fff;
+	font-family: 'Fugaz One', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+}
+
+.project-info p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1rem;
+	line-height: 1.8rem;
+	color: rgba(255, 255, 255, 0.85);
+	margin-bottom: 1.2rem;
+}
+
+.project-tech {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.project-links {
+	display: flex;
+	gap: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+	.works-section {
+		padding: 2rem 2rem;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		text-align: center;
+	}
+
+	.works-section > div {
+		width: 100% !important;
+		padding: 0 !important;
+	}
+
+	.works-section .title {
+		margin-top: 2rem;
+	}
+
+	.project-card {
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		padding: 1.5rem 1rem;
+	}
+
+	.project-info {
+		padding-right: 0;
+	}
+
+	.project-info p {
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		color: rgba(255, 255, 255, 0.85);
+	}
+}
+
+.works-section h1 {
+	line-height: 0.9;
+}
+
+@media screen and (max-width: 450px) {
+	.project-info h3 {
+		font-size: 1.4rem;
+	}
+
+	.project-info p {
+		font-size: 0.85rem;
+	}
+}
