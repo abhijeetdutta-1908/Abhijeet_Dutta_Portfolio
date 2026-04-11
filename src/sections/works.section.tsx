@@ -15,7 +15,7 @@ const projects = [
 			{ icon: <SiExpress color='#ffffff' />, name: 'Express', color: 'rgba(255, 255, 255, 0.4)' },
 			{ icon: <SiMongodb color='#47A248' />, name: 'MongoDB', color: 'rgba(71, 162, 72, 0.6)' },
 		],
-		github: 'https://github.com/abhijeetdutta-1908',
+		github: 'https://github.com/abhijeetdutta-1908/CampusEats',
 		live: 'https://campus-eats-sooty-three.vercel.app',
 	},
 	{
@@ -29,7 +29,7 @@ const projects = [
 			{ icon: <SiTerraform color='#7B42BC' />, name: 'Terraform', color: 'rgba(123, 66, 188, 0.6)' },
 			{ icon: <SiGithubactions color='#2088FF' />, name: 'GitHub Actions', color: 'rgba(32, 136, 255, 0.6)' },
 		],
-		github: 'https://github.com/abhijeetdutta-1908',
+		github: 'https://github.com/abhijeetdutta-1908/CICD_DevSecOps',
 	},
 	{
 		title: 'AWS CI/CD Pipeline with Terraform & CodePipeline',
@@ -40,7 +40,7 @@ const projects = [
 			{ icon: <SiTerraform color='#7B42BC' />, name: 'Terraform', color: 'rgba(123, 66, 188, 0.6)' },
 			{ icon: <SiGithubactions color='#2088FF' />, name: 'GitHub Actions', color: 'rgba(32, 136, 255, 0.6)' },
 		],
-		github: 'https://github.com/abhijeetdutta-1908',
+		github: 'https://github.com/abhijeetdutta-1908/CodePipeline-using-Terraform',
 	},
 ];
 
