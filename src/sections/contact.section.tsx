@@ -1,8 +1,44 @@
+import { useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
 import { SectionTitle } from '../components/section-title.component';
 import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
-import { IoMailOutline, IoLocationOutline, IoSend } from 'react-icons/io5';
+import { IoMailOutline, IoLocationOutline, IoSend, IoCheckmarkCircleOutline } from 'react-icons/io5';
 
 export const Contact = () => {
+	const form = useRef<HTMLFormElement>(null);
+	const [isSending, setIsSending] = useState(false);
+	const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+	const sendEmail = (e: React.FormEvent) => {
+		e.preventDefault();
+
+		if (!form.current) return;
+
+		setIsSending(true);
+		setStatus('idle');
+
+		const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+		const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+		const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+		emailjs
+			.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+			.then(
+				() => {
+					setStatus('success');
+					form.current?.reset();
+				},
+				(error) => {
+					console.error('EmailJS Error:', error);
+					setStatus('error');
+				}
+			)
+			.finally(() => {
+				setIsSending(false);
+				setTimeout(() => setStatus('idle'), 5000);
+			});
+	};
+
 	return (
 		<section className='contact-section container' id='contact'>
 			<div className='contact-grid'>
@@ -40,39 +76,55 @@ export const Contact = () => {
 						<a href='https://www.linkedin.com/in/abhijeet-dutta-19082005ad' target='_blank' rel='noopener' className='social-icon'>
 							<FaLinkedinIn />
 						</a>
-						<a href='#' className='social-icon'>
+						<a href='https://www.instagram.com/_abhijeet_dutta_/' target='_blank' rel='noopener' className='social-icon'>
 							<FaInstagram />
 						</a>
 					</div>
 				</div>
 
 				<div className='contact-form-container'>
-					<form className='contact-form' onSubmit={(e) => e.preventDefault()}>
+					<form className='contact-form' ref={form} onSubmit={sendEmail}>
 						<div className='form-row'>
 							<div className='form-group'>
-								<input type='text' placeholder='Your Name' required />
+								<input type='text' placeholder='Your Name' name='name' required />
 							</div>
 							<div className='form-group'>
-								<input type='email' placeholder='Your Email' required />
+								<input type='email' placeholder='Your Email' name='email' required />
 							</div>
 						</div>
 						<div className='form-group'>
-							<input type='text' placeholder='Subject' required />
+							<input type='text' placeholder='Subject' name='subject' required />
 						</div>
 						<div className='form-group'>
-							<textarea placeholder='Your Message' rows={5} required></textarea>
+							<textarea placeholder='Your Message' name='message' rows={5} required></textarea>
 						</div>
-						<button type='submit' className='submit-btn'>
-							<span>Send Message</span>
-							<IoSend />
+						
+						<button type='submit' className={`submit-btn ${isSending ? 'loading' : ''}`} disabled={isSending}>
+							{isSending ? (
+								<span>Sending...</span>
+							) : status === 'success' ? (
+								<>
+									<span>Success!</span>
+									<IoCheckmarkCircleOutline />
+								</>
+							) : (
+								<>
+									<span>Send Message</span>
+									<IoSend />
+								</>
+							)}
 						</button>
+
+						{status === 'error' && (
+							<p className='error-message'>Something went wrong. Please try again.</p>
+						)}
 					</form>
 				</div>
 			</div>
 			<div className='contact-title-wrapper'>
 				<SectionTitle title='Get In' subTitle='TOUCH' />
 			</div>
-            <div className='blur' style={{ top: '10%', right: '10%' }}></div>
+			<div className='blur' style={{ top: '10%', right: '10%' }}></div>
 		</section>
 	);
 };
