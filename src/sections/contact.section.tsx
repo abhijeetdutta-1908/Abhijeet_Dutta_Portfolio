@@ -18,20 +18,25 @@ export const Contact = () => {
 		setStatus('idle');
 
 		const formData = new FormData(form.current);
+		const honeypot = formData.get('honeypot');
+
+		// 🛡️ Prevent Spam: If honeypot is filled by a bot, silently return
+		if (honeypot) return;
+
 		const name = formData.get('name') as string;
 		const email = formData.get('email') as string;
 		const subject = formData.get('subject') as string;
 		const message = formData.get('message') as string;
 
-		let ip = 'Unknown IP';
-		let location = 'Unknown Location';
+		let ip = '';
+		let location = '';
 
 		try {
 			// One fast API call provides both IP and detailed location
 			const res = await fetch('https://ipapi.co/json/');
 			if (res.ok) {
 				const data = await res.json();
-				ip = data.ip || ip;
+				ip = data.ip;
 				location = `${data.city}, ${data.region}, ${data.country_name}`;
 			}
 		} catch (error) {
@@ -41,11 +46,11 @@ export const Contact = () => {
 		const templateParams = {
 			name,
 			email,
-			subject,
+			subject: subject || 'Portfolio Inquiry',
 			message,
 			time: new Date().toLocaleString(),
-			ip,
-			location,
+			ip: ip || 'Unavailable',
+			location: location || 'Unavailable',
 		};
 
 		const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -115,6 +120,9 @@ export const Contact = () => {
 
 				<div className='contact-form-container'>
 					<form className='contact-form' ref={form} onSubmit={sendEmail}>
+						{/* Honeypot field for spam bots */}
+						<input type='text' name='honeypot' style={{ display: 'none' }} tabIndex={-1} autoComplete='off' />
+						
 						<div className='form-row'>
 							<div className='form-group'>
 								<input type='text' placeholder='Your Name' name='name' required />
