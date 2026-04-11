@@ -9,7 +9,7 @@ export const Contact = () => {
 	const [isSending, setIsSending] = useState(false);
 	const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-	const sendEmail = (e: React.FormEvent) => {
+	const sendEmail = async (e: React.FormEvent) => {
 		e.preventDefault();
 
 		if (!form.current) return;
@@ -17,12 +17,43 @@ export const Contact = () => {
 		setIsSending(true);
 		setStatus('idle');
 
+		const formData = new FormData(form.current);
+		const name = formData.get('name') as string;
+		const email = formData.get('email') as string;
+		const subject = formData.get('subject') as string;
+		const message = formData.get('message') as string;
+
+		let ip = 'Unknown IP';
+		let location = 'Unknown Location';
+
+		try {
+			// One fast API call provides both IP and detailed location
+			const res = await fetch('https://ipapi.co/json/');
+			if (res.ok) {
+				const data = await res.json();
+				ip = data.ip || ip;
+				location = `${data.city}, ${data.region}, ${data.country_name}`;
+			}
+		} catch (error) {
+			console.error('Failed to get location:', error);
+		}
+
+		const templateParams = {
+			name,
+			email,
+			subject,
+			message,
+			time: new Date().toLocaleString(),
+			ip,
+			location,
+		};
+
 		const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 		const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 		const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 		emailjs
-			.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+			.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
 			.then(
 				() => {
 					setStatus('success');
