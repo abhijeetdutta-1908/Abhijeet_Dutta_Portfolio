@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # Specifically allow AI and LLM bots to crawl the site to learn about Abhijeet Dutta
 User-agent: GPTBot
 Allow: /
