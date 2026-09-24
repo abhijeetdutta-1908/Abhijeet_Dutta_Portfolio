@@ -1,7 +1,8 @@
 import { BiLogoTypescript } from 'react-icons/bi';
 import { DiMongodb } from 'react-icons/di';
 import { FaNodeJs, FaReact, FaDocker, FaAws } from 'react-icons/fa';
-import { SiExpress, SiMysql, SiKubernetes, SiTerraform, SiGithubactions } from 'react-icons/si';
+import { SiExpress, SiMysql, SiKubernetes, SiTerraform, SiGithubactions, SiLangchain, SiPython } from 'react-icons/si';
+import { TbVector } from 'react-icons/tb';
 
 import { GlowBox } from '../components/glow-box';
 import { SectionTitle } from '../components/section-title.component';
@@ -44,6 +45,31 @@ const techs = [
 				title: 'MySQL',
 				icon: <SiMysql color='rgb(0, 122, 158)' />,
 				color: 'rgba(0, 122, 158, 0.75)',
+			},
+		],
+	},
+	{
+		heading: 'AI & RAG',
+		items: [
+			{
+				title: 'Python',
+				icon: <SiPython color='rgb(255, 212, 59)' />,
+				color: 'rgba(255, 212, 59, 0.6)',
+			},
+			{
+				title: 'LangChain',
+				icon: <SiLangchain color='rgb(255, 255, 255)' />,
+				color: 'rgba(255, 255, 255, 0.4)',
+			},
+			{
+				title: 'ChromaDB',
+				icon: <TbVector color='rgb(255, 99, 71)' />,
+				color: 'rgba(255, 99, 71, 0.6)',
+			},
+			{
+				title: 'Pinecone',
+				icon: <TbVector color='rgb(32, 201, 151)' />,
+				color: 'rgba(32, 201, 151, 0.6)',
 			},
 		],
 	},
