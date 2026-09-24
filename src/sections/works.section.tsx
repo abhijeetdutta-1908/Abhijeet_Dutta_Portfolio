@@ -1,10 +1,32 @@
+import type React from 'react';
 import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaAws , FaDocker } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiKubernetes, SiTerraform, SiGithubactions } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiKubernetes, SiTerraform, SiGithubactions, SiVercel } from 'react-icons/si';
 import { SectionTitle } from '../components/section-title.component';
 import { GlowLink } from '../components/glow-box-link';
 import { GlowBox } from '../components/glow-box';
 
-const projects = [
+const projects: {
+	title: string;
+	description: string;
+	tech: { icon: React.ReactNode; name: string; color: string }[];
+	github?: string;
+	live?: string;
+}[] = [
+	{
+		title: 'QuoteFlow - B2B RFQ Marketplace',
+		description:
+			'A MERN stack B2B RFQ marketplace where buyers can create and manage requests for quotations (RFQs), while suppliers can browse requirements, submit quotations, and track their submissions. Features secure JWT authentication, role-based access control, input validation, and a responsive user interface.',
+		tech: [
+			{ icon: <FaReact color='#61DAFB' />, name: 'React', color: 'rgba(97, 219, 251, 0.6)' },
+			{ icon: <FaNodeJs color='#68A063' />, name: 'Node.js', color: 'rgba(104, 160, 99, 0.6)' },
+			{ icon: <SiExpress color='#ffffff' />, name: 'Express', color: 'rgba(255, 255, 255, 0.4)' },
+			{ icon: <SiMongodb color='#47A248' />, name: 'MongoDB', color: 'rgba(71, 162, 72, 0.6)' },
+			{ icon: <FaAws color='#FF9900' />, name: 'AWS', color: 'rgba(255, 153, 0, 0.6)' },
+			{ icon: <SiVercel color='#ffffff' />, name: 'Vercel', color: 'rgba(255, 255, 255, 0.4)' },
+		],
+		github: 'https://github.com/abhijeetdutta-1908/QuoteFlow',
+		live: 'https://quote-flow-fawn.vercel.app/',
+	},
 	{
 		title: 'Canteen Food Ordering System',
 		description:
@@ -63,12 +85,14 @@ export const Works = () => {
 							</div>
 						</div>
 						<div className='project-links'>
-							<GlowLink
-								href={project.github}
-								color='rgba(255, 255, 255, 0.5)'
-								icon={<FaGithub color='rgba(255, 255, 255, 0.8)' />}
-								aria-label='GitHub'
-							/>
+							{project.github && (
+								<GlowLink
+									href={project.github}
+									color='rgba(255, 255, 255, 0.5)'
+									icon={<FaGithub color='rgba(255, 255, 255, 0.8)' />}
+									aria-label='GitHub'
+								/>
+							)}
 							{project.live && (
 								<GlowLink
 									href={project.live}

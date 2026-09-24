@@ -5,6 +5,20 @@ const timeline = [
     title: "Certification",
     items: [
       {
+        title: "Fundamentals of AI Agents Using RAG Internship",
+        place: "Syllogistek Systems Pvt. Ltd.",
+        timePeriod: "June 2026",
+        description: (
+          <ul>
+            <li>
+              Completed internship program on building AI agents using
+              Retrieval-Augmented Generation (RAG) (1st - 23rd June 2026).
+            </li>
+            <li>Certificate ID: SYL-2026-RAG-60.</li>
+          </ul>
+        ),
+      },
+      {
         title: "NPTEL - Joy of Computing Using Python (Topper)",
         place: "IIT Ropar",
         timePeriod: "2025",
@@ -64,7 +78,7 @@ const timeline = [
         title: "Bachelor of Technology (B.Tech)",
         place: "Silicon University, Odisha (CSE)",
         timePeriod: "2023 - Present",
-        description: "CGPA: 9.00",
+        description: "CGPA: 9.01",
       },
       {
         title: "Class XII (CBSE)",
